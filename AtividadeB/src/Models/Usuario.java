@@ -9,6 +9,7 @@ public class Usuario {
 	private String sexo;
 	private List<Amigo> amigo;
 	private List<Post> posts;
+	private List<Grupo> listaGrupo;
 	private Scanner leia = new Scanner(System.in);
 	
 	public Usuario(String nome, String sexo) {

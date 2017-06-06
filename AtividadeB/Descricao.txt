@@ -1,0 +1,60 @@
+#Atividade B - proto facebook
+
+Essa e a minha modelagem talvez vc ache diferencas da minha para as outras, mas saiba que a minha foi pensada na modelagem dos principais conceitos do facebook...
+
+Usuario: Um usuario propriamente dito
+
+	tem >
+	- nome
+	- dataNasc
+	- sexo
+	- amigo(s) (fk Amigo)
+	- postagen(s) (fk Postagem)
+	- Grupo(s) (fk Grupo)
+
+Amigo: torna-se um 'amigo' de um outro usuario o usuario que enviou uma solicitacao de amizade (esta classe herda de usuario)
+	
+	tem >
+	- um Usuario
+	- um status
+	- uma dataAmizade
+
+Postagem: Um envio feito por um usuario a rede (herda de Post)
+	
+	tem >
+	- um Post
+	- comentarios
+
+Comentario: Um comentario a cerca de uma postagem (herda de Post)
+
+	tem >
+	- um post
+	- lista respostas
+
+Post: Uma resposta a um comentario
+	
+	tem >
+	- uma descricao
+	- curtidas (fk Curtida)
+
+Grupo: Um grupo de usuarios
+	
+	tem >
+	- um admin
+	- lista usuarios
+	- lista postagens
+
+Curtida: ato de curtir uma postagem
+
+	tem >
+	- um array com ["like", "Haha", "Love", "Wow", "Sad", "Angry"]
+	- e o seu tipo que pode ser ("like", "Haha", "Love", "Wow", "Sad", "Angry")
+
+Page: Uma pagina criada por um usuario
+	
+	tem >
+	- um admin
+	- lista postagens
+	- lista usuarioCurtiu
+	- seguidores
+
